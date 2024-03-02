@@ -28,7 +28,9 @@ To get the most out of this tutorial, you should have a basic understanding of N
 ### The Concept of Server Components and Client Components
 
 For my example, I will discuss the blog page that contains 2 articles. Initially, the rendering of the complete page can be schematized in this way:
+
 ![image](https://github.com/Nico1500/NextAppTutorial/assets/63806892/e5e0d661-60ac-477e-8382-9d526349a626)
-<img width="429" alt="image" src="https://github.com/Nico1500/NextAppTutorial/assets/63806892/e204a540-1c1e-4e7e-861a-df4c673ff515">
+
+<img width="380" alt="image" src="https://github.com/Nico1500/NextAppTutorial/assets/63806892/e204a540-1c1e-4e7e-861a-df4c673ff515">
 
 When we notice this scheme and this screenshot of the page, we can see that the Next.js server generates the components independently before rendering them on the final page. In this case, we can easily render the first 3 components by the server and then make the Card a client component to add interactivity to our page. If I had called the date component in the Card component, it would have been rendered by the Client. This is precisely what we should avoid because the date formatting libraries we use contain a lot of JavaScript, thereby overloading the client. In this example, the Card component accepts a child that we will place at the parent level to avoid turning the date into a client component.
